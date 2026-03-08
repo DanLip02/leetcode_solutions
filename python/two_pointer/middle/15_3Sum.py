@@ -10,6 +10,8 @@ def threeSum(nums):
     :type nums: List[int]
     :rtype: List[List[int]]
     """
+    nums.sort()
+    res = []
     for i in range(len(nums) - 2):
         if i > 0 and nums[i] == nums[i - 1]:
             continue
@@ -21,6 +23,7 @@ def threeSum(nums):
             summ = nums[i] + nums[low] + nums[high]
 
             if summ == 0:
+                res.append([nums[i], nums[low], nums[high]])
                 low += 1
                 high -= 1
                 while low < high and nums[low] == nums[low - 1]:
@@ -31,3 +34,4 @@ def threeSum(nums):
                 low += 1
             else:
                 high -= 1
+    return res

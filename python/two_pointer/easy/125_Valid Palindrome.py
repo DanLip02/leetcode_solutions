@@ -3,7 +3,7 @@ def isPalindrome(s):
     :type s: str
     :rtype: bool
     """
-    s = s.lower().replace(" ", "").replace(',', "").replace(":","")
+    s = s.lower().replace(" ", "").replace(',', "").replace(":","").replace(".", "")
     print(s)
     low = 0
     high = len(s) - 1
